@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mzFHzOclugfbyrpIbZ15yM20haJ/6jjHFwNphOPZBlNn81R3EHUtZAkgESEqQV+1u+ykTuWiT8ThqoCIxaTBvw==",
+  "dgSpecHash": "lwJGrK2bQ8kt0rLlHQsveNekjb0zi4Wo4MmUogRHCn9+6m3/ool5E5AIZ5HCeAEV0DwMh4DlH02kjjkffVDFmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\Library\\Library.csproj",
+  "projectFilePath": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\src\\Library\\Library.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

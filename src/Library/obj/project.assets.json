@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\src\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\Library\\Library.csproj",
+      "projectPath": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\src\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\ignac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\Library\\obj\\",
+      "outputPath": "C:\\Users\\ignac\\Desktop\\repos programacion 2\\Proyecto-PII\\src\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ignac\\AppData\\Roaming\\NuGet\\NuGet.Config"

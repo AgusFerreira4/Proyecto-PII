@@ -1,4 +1,6 @@
-﻿namespace Library;
+﻿using System;
+
+namespace Library;
 
 public abstract class Interaccion
 {

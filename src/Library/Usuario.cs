@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Security.AccessControl;
-using System.Threading.Channels;
 
 namespace Library;
 
@@ -26,20 +21,29 @@ public class Usuario : Persona
     }
     public List<Cliente> VerClientes()
     {
-        List<Cliente> clientes = new List<Cliente>(GenericContainer);
+        List<Cliente> clientes = new List<Cliente>();
+        foreach (Cliente cliente in ListaClientesDeUsuario)
+        {
+            clientes.Add(cliente);
+        }
+
         return clientes;
     }
 
     public List<Interaccion> VerInteraccionesCliente(Cliente cliente)
     {
-        List<Interaccion> interacciones = cliente.ListaInteracciones(GenericContainer);
+        List<Interaccion> interacciones = new List<Interaccion>();
+        foreach (Interaccion i in cliente.ListaInteraccion)
+        {
+            interacciones.Add(i);
+        }
         return interacciones;
     }
     
     public List<Interaccion> VerInteraccionesCliente(Cliente cliente, string tipo)
     {
         List<Interaccion> interacciones = new List<Interaccion>();
-        foreach (Interaccion i in cliente.ListaInteracciones)
+        foreach (Interaccion i in cliente.ListaInteraccion)
         {
             if (i.GetType().Name == tipo)
             {
@@ -52,7 +56,7 @@ public class Usuario : Persona
     public List<Interaccion> VerInteraccionesCliente(Cliente cliente, DateTime fecha)
     {
         List<Interaccion> interacciones = new List<Interaccion>();
-        foreach (Interaccion i in cliente.ListaInteracciones)
+        foreach (Interaccion i in cliente.ListaInteraccion)
         {
             if (i.Fecha == fecha)
             {
@@ -65,7 +69,7 @@ public class Usuario : Persona
     public List<Interaccion> VerInteraccionesCliente(Cliente cliente, DateTime fecha, string tipo)
     {
         List<Interaccion> interacciones = new List<Interaccion>();
-        foreach (Interaccion i in cliente.ListaInteracciones)
+        foreach (Interaccion i in cliente.ListaInteraccion)
         {
             if (i.GetType().Name == tipo && i.Fecha == fecha)
             {
@@ -80,7 +84,7 @@ public class Usuario : Persona
         List<Cliente> clientesPocaInteraccion = new List<Cliente>();
         foreach (Cliente cl in ListaClientesDeUsuario)
         {
-            if (cl.ListaInteracciones.count <= 5)
+            if (cl.ListaInteraccion.count <= 5)
             {
                 clientesPocaInteraccion.Add(cl);
             }
@@ -104,12 +108,12 @@ public class Usuario : Persona
         return clientesVistos;
     }
 
-    public List<Ventas> VerVentasPorPeriodo(DateTime fechaini, DateTime fechafin)
+    public List<Venta> VerVentasPorPeriodo(DateTime fechaini, DateTime fechafin)
     {
-        List<Ventas> ventasPorFecha = new List<Ventas>();
+        List<Venta> ventasPorFecha = new List<Venta>();
         foreach (Venta v in ListaVentas)
         {
-            if (v.fecha >= fechaini && v.fecha <= fechafin)
+            if (v.Fecha >= fechaini && v.Fecha <= fechafin)
             {
                 ventasPorFecha.Add(v);
             }

@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Library;
 
 public class Reuniones : Interaccion

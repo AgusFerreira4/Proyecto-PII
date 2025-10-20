@@ -4,10 +4,10 @@ namespace Library;
 public class Usuario : Persona
 {
     public bool Suspendido { get; set; }
-    private GenericContainer<Cliente> ListaClientesDeUsuario { get; set; }
-    private GenericContainer<Venta> ListaVentas { get; set; }
-    private GenericContainer<Cotizacion> ListaCotizaciones { get; set; }
-    private GenericContainer<Interaccion> ListaInteracciones { get; set; }
+    public GenericContainer<Cliente> ListaClientesDeUsuario { get; set; }
+    public GenericContainer<Venta> ListaVentas { get; set; }
+    public GenericContainer<Cotizacion> ListaCotizaciones { get; set; }
+    public GenericContainer<Interaccion> ListaInteracciones { get; set; }
 
     public Usuario(bool suspendido, GenericContainer<Cliente> listaClientesDeUsuario,
         GenericContainer<Venta> listaVentas, GenericContainer<Cotizacion> listaCotizaciones, GenericContainer<Interaccion> listaInteracciones, string nombre, string email, string apellido)

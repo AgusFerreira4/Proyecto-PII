@@ -5,6 +5,10 @@ namespace Library;
 public class GenericContainer <T> : IEnumerable
 {
     private List<T> items { get; set; }
+    public GenericContainer()
+    {
+        items = new List<T>();
+    }
     public void Add(T item)
     {
         items.Add(item);

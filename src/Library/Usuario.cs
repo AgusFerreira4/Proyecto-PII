@@ -121,9 +121,8 @@ public class Usuario : Persona
         return ventasPorFecha;
     }
 
-    public void RegistrarCotizacion(Dictionary<Producto, int> productocantidad, double total, DateTime fecha,
-        DateTime fechaLimite,
-        Cliente clientecomprador, Usuario usuariovendedor, string descripcion)
+    public void RegistrarCotizacion(double total, DateTime fecha,
+        DateTime fechaLimite, string descripcion)
     {
         Cotizacion cotizacion = new Cotizacion(total, fecha, fechaLimite, descripcion);
     }

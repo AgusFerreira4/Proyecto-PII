@@ -13,5 +13,9 @@ public class GenericContainer <T> : IEnumerable
     {
         return items.GetEnumerator();
     }
-    
+
+    public int Count()
+    {
+        return items.Count;
+    }
 }

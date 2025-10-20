@@ -84,7 +84,7 @@ public class Usuario : Persona
         List<Cliente> clientesPocaInteraccion = new List<Cliente>();
         foreach (Cliente cl in ListaClientesDeUsuario)
         {
-            if (cl.ListaInteraccion.count <= 5)
+            if (cl.ListaInteraccion.Count() <= 5)
             {
                 clientesPocaInteraccion.Add(cl);
             }

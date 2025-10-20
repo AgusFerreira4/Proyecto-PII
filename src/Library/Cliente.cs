@@ -5,13 +5,7 @@ namespace Library;
 
 public class Cliente : Persona
 {
-/*+ Telefono : string
-+ Genero : string
-    + FechaDeNacimienta : string 
-    + Etiquetas : List<string> 
-    + UsuarioAsignado : Usuario
-    - ListaInteracciones : GenericContainer<Interaccion>
-    */
+
     public string Telefono { get; set; }
     public string Genero { get; set; }
     public DateTime FechaDeNacimiento { get; set; }
@@ -19,4 +13,12 @@ public class Cliente : Persona
     public Usuario UsuarioAsignado { get; set; }
     private GenericContainer<Interaccion> ListaInteraccion { get; set; }
 
+    public Cliente(string telefono, string genero, string fechaDeNacimiento, string nombre, string apellido, string email, Usuario usuarioAsignado, GenericContainer<Interaccion> listaInteraccion): base(nombre, apellido, email)
+    {
+        Telefono = telefono;
+        Genero = genero;
+        FechaDeNacimiento = fechaDeNacimiento;
+        UsuarioAsignado = usuarioAsignado;
+        ListaInteraccion = listaInteraccion;
+    }
 }

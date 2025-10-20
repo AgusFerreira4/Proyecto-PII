@@ -120,4 +120,29 @@ public class Usuario : Persona
         }
         return ventasPorFecha;
     }
+
+    public void RegistrarCotizacion(double total, DateTime fecha,
+        DateTime fechaLimite, string descripcion)
+    {
+        Cotizacion cotizacion = new Cotizacion(total, fecha, fechaLimite, descripcion);
+    }
+    
+    public void RegistrarVenta(Dictionary<Producto, int> productos, double total, DateTime fecha, Cliente cliente,
+        Usuario usuario)
+    {
+        Venta venta = new Venta(productos, total, fecha, cliente, usuario);
+        ListaVentas.Add(venta);
+    }
+
+    public void AgregarNotaAInteraccion(Interaccion interaccion, string nota)
+    {
+        foreach (Interaccion i in ListaInteracciones)
+        {
+            if (i.Equals(interaccion))
+            {
+                i.Nota = nota;
+                break;
+            }
+        }
+    }
 }

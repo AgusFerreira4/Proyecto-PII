@@ -9,6 +9,16 @@ public class Venta
    public Cliente ClienteComprador { get; set; }
    public Usuario UsuarioVendedor { get; set; }
 
+   public Venta(Dictionary<Producto, int> productosCantidad, double total, DateTime fecha, Cliente clienteComprador,
+      Usuario usuarioVendedor)
+   {
+      ProductosCantidad = productosCantidad;
+      Total = total;
+      Fecha = fecha;
+      ClienteComprador = clienteComprador;
+      UsuarioVendedor = usuarioVendedor;
+   }
+
    public void AgregarProducto(Producto producto, int cantidad)
    {
       ProductosCantidad.Add(producto, cantidad);

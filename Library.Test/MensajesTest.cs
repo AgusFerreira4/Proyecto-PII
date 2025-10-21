@@ -13,7 +13,7 @@ namespace LibraryTests
         [TestInitialize]
         public void Setup()
         {
-            usuario = new Usuario(false, new GenericContainer<Cliente>(), new GenericContainer<Venta>(), new GenericContainer<Cotizacion>(), new GenericContainer<Interaccion>(), "Juan", "juan@example.com", "Pérez");
+            usuario = new Usuario("Juan", "juan@example.com", "Pérez", false, new GenericContainer<Cliente>(), new GenericContainer<Venta>(), new GenericContainer<Cotizacion>(), new GenericContainer<Interaccion>());
             cliente = new Cliente("099", "F", DateTime.Now, "Ana", "López", "ana@example.com", usuario, new GenericContainer<Interaccion>());
         }
 

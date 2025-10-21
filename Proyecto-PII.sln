@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{50B8D079-67C3-4577-819C-82C33E14E932}"
+	ProjectSection(SolutionItems) = preProject
+		src\ProyectoUML.drawio.svg = src\ProyectoUML.drawio.svg
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "src\Program\Program.csproj", "{68EAE2F2-6833-468F-ACB8-7BDEBF0F6FD4}"
 EndProject

@@ -11,9 +11,29 @@ namespace LibraryTests
         [TestMethod]
         public void Constructor_DeberiaInicializarPropiedades()
         {
-            var cliente = new Cliente("099", "F", DateTime.Now, "Ana", "López", "ana@example.com", null, new GenericContainer<Interaccion>());
-            var usuario = new Usuario(false, new GenericContainer<Cliente>(), new GenericContainer<Venta>(), new GenericContainer<Cotizacion>(), new GenericContainer<Interaccion>(), "Juan", "juan@example.com", "Pérez");
-            var productos = new Dictionary<Producto,int>();
+            var usuario = new Usuario(
+                "Juan",
+                "juan@example.com",
+                "Pérez",
+                false,
+                new GenericContainer<Cliente>(),
+                new GenericContainer<Venta>(),
+                new GenericContainer<Cotizacion>(),
+                new GenericContainer<Interaccion>()
+            );
+
+            var cliente = new Cliente(
+                "099",
+                "F",
+                DateTime.Now,
+                "Ana",
+                "López",
+                "ana@example.com",
+                usuario,
+                new GenericContainer<Interaccion>()
+            );
+
+            var productos = new Dictionary<Producto, int>();
             var venta = new Venta(productos, 1000, DateTime.Now, cliente, usuario);
 
             Assert.AreEqual(1000, venta.Total);
@@ -25,7 +45,7 @@ namespace LibraryTests
         [TestMethod]
         public void AgregarProducto_DeberiaAñadirProducto()
         {
-            var venta = new Venta(new Dictionary<Producto,int>(), 0, DateTime.Now, null, null);
+            var venta = new Venta(new Dictionary<Producto, int>(), 0, DateTime.Now, null, null);
             var prod = new Producto("Mouse", 50);
 
             venta.AgregarProducto(prod, 2);

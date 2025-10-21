@@ -13,7 +13,7 @@ public class Cliente : Persona
     public Usuario UsuarioAsignado { get; set; }
     public GenericContainer<Interaccion> ListaInteraccion { get; set; }
 
-    public Cliente(string telefono, string genero, DateTime fechaDeNacimiento, string nombre, string apellido, string email, Usuario usuarioAsignado, GenericContainer<Interaccion> listaInteraccion): base(nombre, apellido, email)
+    public Cliente(string telefono, string genero, DateTime fechaDeNacimiento, string nombre, string apellido, string email, Usuario usuarioAsignado, GenericContainer<Interaccion>? listaInteraccion = null): base(nombre, apellido, email)
     {
         Telefono = telefono;
         Genero = genero;

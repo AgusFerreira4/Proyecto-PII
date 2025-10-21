@@ -15,15 +15,30 @@ namespace LibraryTests
             var cotizaciones = new GenericContainer<Cotizacion>();
             var interacciones = new GenericContainer<Interaccion>();
 
-            // CORRECCIÓN: nombre, apellido, email en orden correcto
-            return new Usuario(false, clientes, ventas, cotizaciones, interacciones,
-                               "Juan", "Pérez", "juan@example.com");
+            return new Usuario(
+                "Juan",
+                "juan@example.com",
+                "Pérez",
+                false,
+                clientes,
+                ventas,
+                cotizaciones,
+                interacciones
+            );
         }
 
         private Cliente CrearClienteDePrueba(Usuario usuario)
         {
-            return new Cliente("099111222", "Femenino", new DateTime(1990, 5, 20),
-                               "Ana", "López", "ana@example.com", usuario, new GenericContainer<Interaccion>());
+            return new Cliente(
+                "099111222",
+                "Femenino",
+                new DateTime(1990, 5, 20),
+                "Ana",
+                "López",
+                "ana@example.com",
+                usuario,
+                new GenericContainer<Interaccion>()
+            );
         }
 
         [TestMethod]
@@ -55,7 +70,7 @@ namespace LibraryTests
         {
             var usuario = CrearUsuarioDePrueba();
             var cliente = CrearClienteDePrueba(usuario);
-            usuario.ListaClientesDeUsuario.Add(cliente); // 0 interacciones
+            usuario.ListaClientesDeUsuario.Add(cliente);
 
             var resultado = usuario.VerClientesConPocaInteraccion();
 
@@ -155,7 +170,6 @@ namespace LibraryTests
             var usuario = CrearUsuarioDePrueba();
             usuario.RegistrarCotizacion(500, DateTime.Now, DateTime.Now.AddDays(10), "Cotizacion test");
 
-            // Solo verificamos que no lance excepción
             Assert.IsTrue(true);
         }
     }

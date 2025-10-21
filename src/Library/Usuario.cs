@@ -8,17 +8,26 @@ public class Usuario : Persona
     public GenericContainer<Venta> ListaVentas { get; set; }
     public GenericContainer<Cotizacion> ListaCotizaciones { get; set; }
     public GenericContainer<Interaccion> ListaInteracciones { get; set; }
-
-    public Usuario(bool suspendido, GenericContainer<Cliente> listaClientesDeUsuario,
-        GenericContainer<Venta> listaVentas, GenericContainer<Cotizacion> listaCotizaciones, GenericContainer<Interaccion> listaInteracciones, string nombre, string email, string apellido)
+    
+    public Usuario(
+        string nombre,
+        string email,
+        string apellido,
+        bool suspendido,
+        GenericContainer<Cliente>? listaClientesDeUsuario = null,
+        GenericContainer<Venta>? listaVentas = null,
+        GenericContainer<Cotizacion>? listaCotizaciones = null,
+        GenericContainer<Interaccion>? listaInteracciones = null
+        )
         : base(nombre, email, apellido)
     {
         Suspendido = suspendido;
-        ListaClientesDeUsuario = listaClientesDeUsuario;
-        ListaVentas = listaVentas;
-        ListaCotizaciones = listaCotizaciones;
-        ListaInteracciones = listaInteracciones;
+        ListaClientesDeUsuario = listaClientesDeUsuario ?? new GenericContainer<Cliente>();
+        ListaVentas = listaVentas ?? new GenericContainer<Venta>();
+        ListaCotizaciones = listaCotizaciones ?? new GenericContainer<Cotizacion>();
+        ListaInteracciones = listaInteracciones ?? new GenericContainer<Interaccion>();
     }
+
     public List<Cliente> VerClientes()
     {
         List<Cliente> clientes = new List<Cliente>();
